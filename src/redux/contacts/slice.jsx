@@ -36,16 +36,28 @@ const handleDeleteContactSuccess = (state, action) => {
 export const contactSlice = createSlice({
   name: 'contacts',
   initialState,
-  extraReducers: {
-    [fetchContacts.pending]: handlePending,
-    [addContact.pending]: handlePending,
-    [deleteContact.pending]: handlePending,
-    [fetchContacts.rejected]: handleRejected,
-    [addContact.rejected]: handleRejected,
-    [deleteContact.rejected]: handleRejected,
-    [fetchContacts.fulfilled]: handleFetchContactsSuccess,
-    [addContact.fulfilled]: handleAddContactSuccess,
-    [deleteContact.fulfilled]: handleDeleteContactSuccess,
+  extraReducers: builder => {
+    builder
+      .addCase(fetchContacts.pending, handlePending)
+      .addCase(addContact.pending, handlePending)
+      .addCase(deleteContact.pending, handlePending)
+      .addCase(fetchContacts.rejected, handleRejected)
+      .addCase(addContact.rejected, handleRejected)
+      .addCase(deleteContact.rejected, handleRejected)
+      .addCase(fetchContacts.fulfilled, handleFetchContactsSuccess)
+      .addCase(addContact.fulfilled, handleAddContactSuccess)
+      .addCase(deleteContact.fulfilled, handleDeleteContactSuccess);
   },
+  // extraReducers: {
+  //   [fetchContacts.pending]: handlePending,
+  //   [addContact.pending]: handlePending,
+  //   [deleteContact.pending]: handlePending,
+  //   [fetchContacts.rejected]: handleRejected,
+  //   [addContact.rejected]: handleRejected,
+  //   [deleteContact.rejected]: handleRejected,
+  //   [fetchContacts.fulfilled]: handleFetchContactsSuccess,
+  //   [addContact.fulfilled]: handleAddContactSuccess,
+  //   [deleteContact.fulfilled]: handleDeleteContactSuccess,
+  // },
 });
 export const contactsReducer = contactSlice.reducer;
