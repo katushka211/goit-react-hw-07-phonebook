@@ -3,7 +3,7 @@ import * as yup from 'yup';
 import 'yup-phone';
 import { ButtonForm } from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/operations';
+import { addContact } from 'redux/contacts/operations';
 import { nanoid } from '@reduxjs/toolkit';
 import { selectContact } from 'redux/selectors';
 

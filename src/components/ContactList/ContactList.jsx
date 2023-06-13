@@ -6,7 +6,7 @@ import {
   selectError,
 } from 'redux/selectors';
 import { useEffect } from 'react';
-import { fetchContacts } from 'redux/operations';
+import { fetchContacts } from 'redux/contacts/operations';
 import { Loader } from 'components/Loader/Loader';
 
 export const ContactList = () => {

@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { Wrapper } from './Contact.styled';
 import { Button } from './Contact.styled';
 import PropTypes from 'prop-types';
-import { deleteContact } from 'redux/operations';
+import { deleteContact } from 'redux/contacts/operations';
 
 export const Contact = ({ item: { name, number, id } }) => {
   const dispatch = useDispatch();
