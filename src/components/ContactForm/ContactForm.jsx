@@ -32,9 +32,9 @@ export const ContactForm = () => {
     event.preventDefault();
     const form = event.target;
     const contact = {
-      id: nanoid(),
       name: event.target.elements.name.value,
       number: event.target.elements.number.value,
+      id: nanoid(),
     };
     if (contacts.find(({ name }) => name === contact.name)) {
       alert(`${contact.name} is already in contacts`);
