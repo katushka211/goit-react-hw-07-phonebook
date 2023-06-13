@@ -1,14 +1,18 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Contact } from '../Contact/Contact';
-import { getVisibleContacts, getLoading, getError } from 'redux/selectors';
+import {
+  getVisibleContacts,
+  selectLoading,
+  selectError,
+} from 'redux/selectors';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/operations';
 import { Loader } from 'components/Loader/Loader';
 
 export const ContactList = () => {
   const visibleContacts = useSelector(getVisibleContacts);
-  const isLoading = useSelector(getLoading);
-  const error = useSelector(getError);
+  const isLoading = useSelector(selectLoading);
+  const error = useSelector(selectError);
   const dispatch = useDispatch();
 
   useEffect(() => {
